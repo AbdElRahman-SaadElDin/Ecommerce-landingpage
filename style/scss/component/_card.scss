@@ -1,0 +1,38 @@
+// Product Card Styles
+.product-card {
+	border-radius: 1.5rem;
+	box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+	transition: box-shadow 0.2s;
+	border: 1px solid #f0f0f0;
+	&:hover {
+		box-shadow: 0 4px 16px 0 rgba(60, 72, 88, 0.1);
+		border-color: #e6f4ea;
+	}
+	.badge {
+		font-size: 1rem;
+		font-weight: 500;
+		width: 64px;
+		border-radius: 15px 0px 20px !important;
+		left: 1.5rem !important;
+		top: 0.75rem !important;
+	}
+	img {
+		margin-bottom: 1rem;
+		border-radius: 1rem;
+		background: #f8f9fa;
+	}
+	.fw-bold.fs-5 {
+		font-size: 1.1rem !important;
+	}
+	.btn-success {
+		font-weight: 500;
+		border-radius: 0.75rem;
+		font-size: 1rem;
+		padding: 0.5rem 1.25rem;
+		display: flex;
+		align-items: center;
+	}
+	.text-decoration-line-through {
+		font-size: 1rem;
+	}
+}

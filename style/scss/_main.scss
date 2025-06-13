@@ -1,0 +1,369 @@
+@import "layout/footer";
+@import "component/card";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+// Custom Navbar Styles
+.section-container,
+.navbar {
+	width: 100%;
+	padding-left: 166px !important;
+	padding-right: 166px !important;
+}
+
+.navbar {
+	box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+}
+
+.category-btn {
+	min-width: 150px;
+	border: none;
+	background: #fff;
+}
+
+.search-input {
+	border: none;
+	background: #fff;
+}
+
+.search-btn {
+	border: none;
+}
+
+.input-group {
+	border: 1px solid #198754;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #fff;
+	max-width: 70%;
+}
+
+.location-btn {
+	border: 1px solid #c6eccf;
+	border-radius: 8px;
+	background: #fff;
+	color: #198754;
+	font-weight: 500;
+}
+
+.nav-link {
+	color: #223263;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+.nav-link:hover {
+	color: #198754;
+}
+
+.navbar i {
+	margin-right: 5px;
+}
+
+// Secondary Navbar Styles
+.secondary-navbar {
+	font-size: 1rem;
+	.navbar-nav {
+		gap: 1.5rem;
+	}
+	.btn-success {
+		font-weight: 500;
+		border-radius: 6px;
+		font-size: 1rem;
+		padding: 0.5rem 1.25rem;
+		display: flex;
+		align-items: center;
+	}
+	.nav-link {
+		color: #223263;
+		font-weight: 500;
+		transition: color 0.2s;
+		&:hover {
+			color: #198754;
+		}
+	}
+	.nav-link.text-success {
+		color: #198754 !important;
+	}
+	.dropdown-toggle::after {
+		margin-left: 0.5em;
+	}
+	.navbar-nav .dropdown-menu {
+		min-width: 8rem;
+	}
+	.fs-3 {
+		font-size: 1.75rem !important;
+	}
+	.lh-1 {
+		line-height: 1.1;
+	}
+	.support-section {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+}
+
+// Hero Section Styles
+.hero-section {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.category-sidebar {
+	width: 24%;
+	background: #fff;
+	border-radius: 1.5rem;
+	box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+}
+
+.category-title {
+	font-size: 2rem;
+	font-weight: 700;
+	color: #223263;
+	margin-bottom: 0.5rem;
+}
+
+.category-underline {
+	width: 40%;
+	height: 4px;
+	background: #6dd230;
+	border-radius: 2px;
+	margin-bottom: 1.5rem;
+}
+
+.category-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.category-item {
+	background: #f8fafc;
+	border-radius: 1rem;
+	padding: 0.75rem 1.25rem;
+	display: flex;
+	align-items: center;
+	transition: box-shadow 0.2s;
+	box-shadow: 0 1px 4px 0 rgba(30, 136, 229, 0.03);
+}
+.category-item:hover {
+	box-shadow: 0 4px 16px 0 rgba(30, 136, 229, 0.1);
+}
+
+.category-icon {
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+}
+
+.category-label {
+	font-size: 1.15rem;
+	font-weight: 500;
+	color: #223263;
+}
+
+.category-badge {
+	background: #eafbe7;
+	color: #6dd230;
+	font-weight: 700;
+	font-size: 1.1rem;
+	border-radius: 50%;
+	width: 2.2rem;
+	height: 2.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 1rem;
+}
+
+.hero-content {
+	background: #fdf6e9 url("../../assets/imgs/Tabpanel.png") no-repeat;
+	background-size: cover;
+	border-radius: 1.5rem;
+	box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+	padding: 3rem 2.5rem;
+	min-height: 340px;
+	flex-grow: 1;
+	position: relative;
+}
+
+.hero-content h1 {
+	font-size: 4.5rem;
+	max-width: 62%;
+}
+
+.hero-content .input-group {
+	border-radius: 2rem;
+	overflow: hidden;
+	box-shadow: 0 1px 4px 0 rgba(60, 72, 88, 0.04);
+	max-width: 39%;
+}
+
+.hero-content .form-control {
+	border: none;
+	background: #fff;
+	font-size: 1rem;
+	padding-left: 1.5rem;
+}
+
+.hero-content .btn-success {
+	border-radius: 0 2rem 2rem 0;
+	font-weight: 500;
+	font-size: 1rem;
+	padding: 0.75rem 2rem;
+}
+
+.indicator {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #e0e0e0;
+}
+.indicator.bg-success {
+	background: #198754;
+}
+.indicator.bg-secondary {
+	background: #adb5bd;
+}
+
+// New Products Aside Styles
+.new-products-aside {
+	min-width: 300px;
+	max-width: 340px;
+	.progress-bar-line {
+		height: 3px;
+		background: #e6f4ea;
+		border-radius: 2px;
+		margin-top: -1rem;
+		margin-bottom: 2rem;
+		position: relative;
+		&::after {
+			content: "";
+			display: block;
+			height: 3px;
+			width: 30%;
+			background: #198754;
+			border-radius: 2px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.new-products-list li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px dashed #e0e0e0;
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+		img {
+			border-radius: 0.75rem;
+			background: #f8f9fa;
+		}
+		.fw-bold {
+			font-size: 1.1rem;
+		}
+		.text-success {
+			font-weight: 600;
+		}
+		.text-warning {
+			font-size: 1.1rem;
+		}
+	}
+}
+
+// Products Section
+.products-section {
+	align-items: flex-start;
+}
+
+// Banner Section Styles
+.banner-section {
+	margin-top: 2rem;
+	padding-left: 30.625rem !important;
+	padding-right: 10.375rem !important;
+	.banner-card {
+		background: #fff;
+		min-height: 10rem;
+		box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+		border-radius: 1.5rem;
+		position: relative;
+		img {
+			border-radius: 1.5rem;
+			object-fit: cover;
+			min-height: 10rem;
+			max-height: 11.25rem;
+			filter: brightness(0.92);
+		}
+		.banner-content {
+			left: 0;
+			top: 0;
+			z-index: 2;
+			color: #223263;
+			h5 {
+				font-size: 1.25rem;
+				max-width: 80%;
+			}
+			.btn-success {
+				font-weight: 500;
+				border-radius: 0.75rem;
+				font-size: 1rem;
+				padding: 0.5rem 1.25rem;
+				margin-top: 0.5rem;
+			}
+		}
+	}
+}
+
+// Footer Banner Section Styles
+.footer-banner-section {
+	background-color: #eafaf1;
+	background-position: center;
+	background-size: cover;
+	min-height: 260px;
+	border-radius: 1.5rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	position: relative;
+	overflow: hidden;
+	background: url("../../assets/imgs/Footer → Section.png") center/cover
+		no-repeat;
+	min-height: 260px;
+	.input-group {
+		max-width: 420px;
+		border-radius: 2rem;
+		box-shadow: 0 1px 4px 0 rgba(60, 72, 88, 0.04);
+		.form-control {
+			border: none;
+			background: #fff;
+			font-size: 1rem;
+			padding-left: 1rem;
+		}
+		.btn-success {
+			border-radius: 2rem;
+			font-weight: 500;
+			font-size: 1rem;
+			padding: 0.75rem 2rem;
+		}
+	}
+	h2 {
+		font-size: 2.5rem;
+		color: #223263;
+		font-weight: 700;
+	}
+	p {
+		font-size: 1.15rem;
+		color: #6c757d;
+	}
+}
+

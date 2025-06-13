@@ -1,0 +1,17 @@
+{
+  "name": "bootsrap-scss-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx sass style/scss/_main.scss style/dist/style.css",
+    "watch:css": "npx sass --watch style/scss/_main.scss:style/dist/style.css"
+  },
+  "author": "Abdelrahman Saad",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1"
+  }
+}
