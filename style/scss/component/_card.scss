@@ -36,3 +36,21 @@
 		font-size: 1rem;
 	}
 }
+
+@media (max-width: 400px) {
+	.products-section .row {
+		flex-direction: column !important;
+		display: flex !important;
+		gap: 1.5rem !important;
+	}
+	.products-section .col-md-4,
+	.products-section .col-lg-3 {
+		width: 100% !important;
+		max-width: 100% !important;
+		flex: 0 0 100% !important;
+		display: flex;
+	}
+	.products-section .product-card {
+		width: 100%;
+	}
+}

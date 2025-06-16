@@ -93,6 +93,25 @@
 		}
 	}
 
+	.footer-social-icon {
+		width: 40px;
+		height: 40px;
+		background: #44be8d;
+		color: #fff;
+		border-radius: 50%;
+		font-size: 1.25rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		transition: background 0.2s, color 0.2s;
+		text-decoration: none;
+
+		&:hover {
+			background: #198754;
+			color: #fff;
+		}
+	}
+
 	.footer-discount {
 		margin-left: 0.2rem;
 		font-size: 0.98rem;
@@ -134,5 +153,49 @@
 	.text-secondary.small {
 		color: #7e7e7e !important;
 		font-size: 0.95rem;
+	}
+}
+
+// Mobile Footer Styles
+.footer-section-mobile {
+	background: #fff;
+	border-radius: 1.2rem;
+	box-shadow: 0 2px 8px 0 rgba(60, 72, 88, 0.04);
+	font-size: 1rem;
+	.fw-bold {
+		color: #223263;
+	}
+	ul {
+		padding-left: 0;
+		li {
+			color: #223263;
+			margin-bottom: 0.4rem;
+			font-size: 0.97rem;
+			i {
+				width: 20px;
+				text-align: center;
+			}
+		}
+	}
+	.payment-icons img {
+		height: 22px;
+	}
+	.small {
+		font-size: 0.97rem;
+	}
+}
+
+// Hide desktop footer on mobile, show mobile footer only on mobile
+@media (max-width: 767.98px) {
+	.footer-section {
+		display: none !important;
+	}
+	.footer-section-mobile {
+		display: block !important;
+	}
+}
+@media (min-width: 768px) {
+	.footer-section-mobile {
+		display: none !important;
 	}
 }

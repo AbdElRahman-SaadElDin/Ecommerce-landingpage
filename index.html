@@ -20,10 +20,25 @@
 		/>
 	</head>
 	<body>
+		<!-- Promo Bar (Mobile Only) -->
+		<div class="promo-bar d-lg-none bg-success text-white text-center py-2 small">
+			Grand opening, up to 15% off all items. Only 3 days left
+		</div>
+
 		<!-- Main Navbar -->
 		<nav class="navbar navbar-expand-lg bg-white py-3 main-navbar">
 			<div class="main-navbar-content d-flex align-items-center w-100">
-				<a class="navbar-brand d-flex align-items-center" href="#">
+				<!-- Hamburger for mobile -->
+				<button
+					class="btn d-lg-none me-2"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#mobileMenu"
+					aria-controls="mobileMenu"
+				>
+					<i class="fa-solid fa-bars fa-lg"></i>
+				</button>
+				<a class="navbar-brand d-flex align-items-center mx-auto mx-lg-0" href="#">
 					<img
 						src="assets/imgs/logo.png"
 						alt="Logo"
@@ -33,7 +48,8 @@
 					/>
 					<span class="fw-bold fs-4">Logo</span>
 				</a>
-				<form class="d-flex flex-grow-1 mx-4" role="search">
+				<!-- Desktop search input -->
+				<form class="d-none d-lg-flex flex-grow-1 mx-4" role="search">
 					<div class="input-group">
 						<button
 							class="btn btn-outline-secondary dropdown-toggle category-btn"
@@ -52,7 +68,23 @@
 						</button>
 					</div>
 				</form>
-				<div class="d-flex align-items-center ms-auto gap-3">
+				<div class="d-flex align-items-center ms-auto gap-3 d-lg-none">
+					<a href="#" class="nav-link position-relative">
+						<i class="fa-regular fa-heart fa-lg"></i>
+						<span
+							class="position-absolute translate-middle badge rounded-pill bg-success"
+							>4</span
+						>
+					</a>
+					<a href="#" class="nav-link position-relative">
+						<i class="fa-solid fa-cart-shopping fa-lg"></i>
+						<span
+							class="position-absolute translate-middle badge rounded-pill bg-success"
+							>2</span
+						>
+					</a>
+				</div>
+				<div class="d-none d-lg-flex align-items-center ms-auto gap-3">
 					<div class="dropdown">
 						<button
 							class="btn btn-outline-light location-btn d-flex align-items-center dropdown-toggle"
@@ -79,10 +111,34 @@
 				</div>
 			</div>
 		</nav>
+		<div
+			class="offcanvas offcanvas-start"
+			tabindex="-1"
+			id="mobileMenu"
+			aria-labelledby="mobileMenuLabel"
+		>
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="offcanvas"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="offcanvas-body">
+				<ul class="navbar-nav flex-column gap-2">
+					<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Vendors</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
 
-		<!-- Secondary Navbar -->
+		<!-- Secondary Navbar (hidden on mobile) -->
 		<nav
-			class="navbar navbar-expand-lg bg-white py-2 border-top border-bottom secondary-navbar"
+			class="navbar navbar-expand-lg bg-white py-2 border-top border-bottom secondary-navbar d-none d-lg-flex"
 		>
 			<div
 				class="secondary-navbar-content d-flex justify-content-between align-items-center w-100"
@@ -151,6 +207,66 @@
 				</div>
 			</div>
 		</nav>
+
+		<!-- Featured Categories Section (Mobile Only) -->
+		<section class="featured-categories-section d-block d-md-none py-4">
+			<div class="container-fluid px-3">
+				<h2 class="fw-bold mb-3 featured-categories-title">Featured Categories</h2>
+				<ul
+					class="nav nav-pills mb-3 gap-2 featured-categories-tabs"
+					role="tablist"
+				>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" data-bs-toggle="pill" type="button">
+							Cake & Milk
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="pill" type="button">
+							Coffes & Teas
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="pill" type="button">
+							Pet Foods
+						</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" data-bs-toggle="pill" type="button">
+							Vegetables
+						</button>
+					</li>
+				</ul>
+				<div class="row g-3">
+					<div class="col-6">
+						<div class="category-card text-center p-3 rounded-4">
+							<img
+								src="assets/imgs/cat-13.png.png"
+								alt="Cake & Milk"
+								class="mb-2"
+								width="70"
+								height="70"
+							/>
+							<div class="fw-bold mb-1">Cake & Milk</div>
+							<div class="text-secondary small">26 items</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="category-card text-center p-3 rounded-4">
+							<img
+								src="assets/imgs/cat-12.png.png"
+								alt="Organic Kiwi"
+								class="mb-2"
+								width="70"
+								height="70"
+							/>
+							<div class="fw-bold mb-1">Organic Kiwi</div>
+							<div class="text-secondary small">28 items</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- Hero Section -->
 		<section
@@ -306,22 +422,27 @@
 				<div
 					class="d-flex align-items-center mb-4 products-header justify-content-between flex-wrap"
 				>
-					<h4 class="fw-bold mb-0 products-title">জনপ্রিয় প্রোডাক্ট</h4>
-					<ul class="nav nav-pills products-tabs gap-4 flex-nowrap">
+					<h4 class="fw-bold mb-0 products-title">Popular Products</h4>
+					<ul class="nav nav-pills products-tabs flex-wrap">
 						<li class="nav-item">
-							<a class="nav-link text-success fw-bold" href="#">সমস্ত</a>
+							<a class="nav-link text-success fw-bold" href="#">All</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold" href="#">দুধ এবং দই</a>
+							<a class="nav-link fw-bold" href="#">Milks & Dairies</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link fw-bold" href="#">কফি ও চা</a>
+							<a class="nav-link fw-bold" href="#">Coffes & Teas</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">পোষা প্রাণীর খাবার</a>
+							<a class="nav-link fw-bold" href="#">Pet Foods</a>
 						</li>
-						<li class="nav-item"><a class="nav-link fw-bold" href="#">শাকসবজি</a></li>
-						<li class="nav-item"><a class="nav-link fw-bold" href="#">ফলমূল</a></li>
+						<li class="nav-item"><a class="nav-link fw-bold" href="#">Meats</a></li>
+						<li class="nav-item">
+							<a class="nav-link fw-bold" href="#">Vegetables</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link fw-bold" href="#">Fruits</a>
+						</li>
 					</ul>
 				</div>
 				<div class="row g-4">
@@ -468,6 +589,79 @@
 		</section>
 		<!-- End Products Section -->
 
+		<!-- Deals Of The Day (Mobile Only) -->
+		<section class="deals-of-the-day-section d-block d-md-none my-4">
+			<div class="container">
+				<h4 class="fw-bold mb-3">Deals Of The Day</h4>
+				<ul class="nav nav-pills mb-3">
+					<li class="nav-item">
+						<a class="nav-link active text-success" href="#deals-featured"
+							>Featured</a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link">Popular</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link">New added</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="deals-featured">
+						<div class="card deals-card p-3 position-relative">
+							<span
+								class="badge bg-info text-white position-absolute top-0 start-0 m-2"
+								>Sale</span
+							>
+							<img
+								src="assets/imgs/product1.png"
+								class="card-img-top mx-auto d-block my-2"
+								style="max-width: 120px"
+								alt="Deal Product"
+							/>
+							<div class="card-body p-0">
+								<div class="text-secondary small mb-1">Hodo Foods</div>
+								<div class="fw-bold mb-1">Angie’s Boomchickapop Sweet and womnies</div>
+								<div class="mb-2">
+									<i class="fa-solid fa-star text-warning"></i>
+								</div>
+								<div class="d-flex align-items-center mb-2">
+									<span class="fw-bold fs-5 text-success">$238.85</span>
+									<span class="text-decoration-line-through text-secondary ms-2"
+										>$245.8</span
+									>
+								</div>
+								<div class="progress mb-2" style="height: 6px">
+									<div
+										class="progress-bar bg-success"
+										role="progressbar"
+										style="width: 75%"
+									></div>
+								</div>
+								<div class="small text-secondary mb-2">Sold: 90/120</div>
+								<button
+									class="btn btn-success w-100 d-flex align-items-center justify-content-center gap-2"
+								>
+									<i class="fa-solid fa-cart-shopping"></i> Add To Cart
+								</button>
+							</div>
+							<button
+								class="btn btn-light position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle shadow-sm"
+							>
+								<i class="fa-solid fa-chevron-left"></i>
+							</button>
+							<button
+								class="btn btn-light position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle shadow-sm"
+							>
+								<i class="fa-solid fa-chevron-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Deals Of The Day (Mobile Only) -->
+
 		<!-- Banner Section -->
 		<section class="banner-section mb-4">
 			<div class="row g-4">
@@ -560,37 +754,40 @@
 		<footer class="footer-section section-container py-5">
 			<div class="row gy-4">
 				<!-- Logo & Contact -->
-				<div class="col-lg-3 col-md-6 col-12">
-					<div class="footer-logo mb-3">
-						<img src="assets/imgs/logo.png" alt="Logo" style="height: 48px" />
-						<span class="fs-2 fw-bold align-middle ms-2" style="color: #223263"
-							>Logo</span
+				<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+					<div class="footer-logo d-flex align-items-center mb-2">
+						<img src="assets/imgs/logo.png" alt="Nest logo" style="height: 40px" />
+						<span
+							class="ms-2"
+							style="font-size: 1.7rem; color: #198754; font-weight: 700"
+							>Nest</span
 						>
 					</div>
-					<p class="text-secondary mb-3">Awesome grocery store website template</p>
-					<ul class="list-unstyled footer-contact">
-						<li class="mb-2">
-							<i class="fa-solid fa-location-dot text-success me-2"></i
-							><span class="fw-bold">Address:</span> 5171 W Campbell Ave undefined
-							Kent, Utah 53127 United States
+					<div class="mb-2 text-secondary" style="font-size: 0.98rem">
+						Awesome grocery store website template
+					</div>
+					<ul class="list-unstyled footer-contact mb-3">
+						<li class="d-flex align-items-start mb-2">
+							<i class="fa-solid fa-location-dot me-2 mt-1 text-success"></i> 5171 W
+							Campbell Ave undefined Kent, Utah 53127 United States
 						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-headphones text-success me-2"></i
-							><span class="fw-bold">Call Us:</span>(+91) - 540-025-124553
+						<li class="d-flex align-items-start mb-2">
+							<i class="fa-solid fa-headphones me-2 mt-1 text-success"></i> (+91) -
+							540-025-124553
 						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-paper-plane text-success me-2"></i
-							><span class="fw-bold">Email:</span>sale@Nest.com
+						<li class="d-flex align-items-start mb-2">
+							<i class="fa-solid fa-paper-plane me-2 mt-1 text-success"></i>
+							sale@Nest.com
 						</li>
-						<li>
-							<i class="fa-regular fa-clock text-success me-2"></i
-							><span class="fw-bold">Hours:</span>10:00 - 18:00, Mon - Sat
+						<li class="d-flex align-items-start">
+							<i class="fa-regular fa-clock me-2 mt-1 text-success"></i> 10:00 - 18:00,
+							Mon - Sat
 						</li>
 					</ul>
 				</div>
 				<!-- Company -->
-				<div class="col-lg-2 col-md-6 col-6">
-					<h5 class="fw-bold mb-3">Company</h5>
+				<div class="col-lg-2 col-md-6 col-6 mb-4 mb-lg-0">
+					<h6 class="fw-bold mb-3">Company</h6>
 					<ul class="list-unstyled footer-links">
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Delivery Information</a></li>
@@ -602,8 +799,8 @@
 					</ul>
 				</div>
 				<!-- Account -->
-				<div class="col-lg-2 col-md-6 col-6">
-					<h5 class="fw-bold mb-3">Account</h5>
+				<div class="col-lg-2 col-md-6 col-6 mb-4 mb-lg-0">
+					<h6 class="fw-bold mb-3">Account</h6>
 					<ul class="list-unstyled footer-links">
 						<li><a href="#">Sign In</a></li>
 						<li><a href="#">View Cart</a></li>
@@ -615,8 +812,8 @@
 					</ul>
 				</div>
 				<!-- Corporate -->
-				<div class="col-lg-2 col-md-6 col-6">
-					<h5 class="fw-bold mb-3">Corporate</h5>
+				<div class="col-lg-2 col-md-6 col-6 mb-4 mb-lg-0">
+					<h6 class="fw-bold mb-3">Corporate</h6>
 					<ul class="list-unstyled footer-links">
 						<li><a href="#">Become a Vendor</a></li>
 						<li><a href="#">Affiliate Program</a></li>
@@ -628,8 +825,8 @@
 					</ul>
 				</div>
 				<!-- Popular -->
-				<div class="col-lg-2 col-md-6 col-6">
-					<h5 class="fw-bold mb-3">Popular</h5>
+				<div class="col-lg-2 col-md-6 col-6 mb-4 mb-lg-0">
+					<h6 class="fw-bold mb-3">Popular</h6>
 					<ul class="list-unstyled footer-links">
 						<li><a href="#">Milk & Flavoured Milk</a></li>
 						<li><a href="#">Butter and Margarine</a></li>
@@ -640,36 +837,69 @@
 						<li><a href="#">Cheese</a></li>
 					</ul>
 				</div>
-				<!-- Install App & Social -->
+				<!-- Install App & Payment -->
 				<div class="col-lg-3 col-md-12 col-12">
-					<h5 class="fw-bold mb-5">Install App</h5>
-					<div class="d-flex gap-2 mb-4">
+					<div class="fw-bold mb-2">Install App</div>
+					<div class="mb-2" style="font-size: 0.97rem">
+						From App Store or Google Play
+					</div>
+					<div class="d-flex gap-2 mb-3">
 						<a href="#"
 							><img
 								src="assets/imgs/Link → app-store.jpg.png"
 								alt="App Store"
-								style="height: 48px"
+								style="height: 38px"
 						/></a>
 						<a href="#"
 							><img
 								src="assets/imgs/Link → google-play.jpg.png"
 								alt="Google Play"
-								style="height: 48px"
+								style="height: 38px"
 						/></a>
 					</div>
-					<div class="mb-3 text-secondary">Secured Payment Gateways</div>
-					<div class="footer-social mt-4">
-						<span class="fw-bold me-2">Follow Us</span>
-						<a href="#" class="footer-icon"
-							><i class="fa-brands fa-facebook-f"></i
-						></a>
-						<a href="#" class="footer-icon"><i class="fa-brands fa-twitter"></i></a>
-						<a href="#" class="footer-icon"><i class="fa-brands fa-instagram"></i></a>
-						<a href="#" class="footer-icon"
-							><i class="fa-brands fa-pinterest-p"></i
-						></a>
-						<a href="#" class="footer-icon"><i class="fa-brands fa-youtube"></i></a>
-						<div class="footer-discount text-secondary mt-2" style="font-size: 1rem">
+					<div class="mb-2 text-secondary" style="font-size: 0.95rem">
+						Secured Payment Gateways
+					</div>
+					<div class="d-flex gap-2 mb-3 payment-icons">
+						<img
+							src="assets/imgs/payment-method.png.png"
+							alt="Visa"
+							style="height: 28px"
+						/>
+					</div>
+					<!-- Social Follow Section -->
+					<div class="footer-social-follow mt-4">
+						<div class="fw-bold mb-2" style="color: #223263; font-size: 1.15rem">
+							Follow Us
+						</div>
+						<div class="d-flex align-items-center gap-2 mb-2">
+							<a
+								href="#"
+								class="footer-social-icon d-inline-flex align-items-center justify-content-center"
+								><i class="fab fa-facebook-f"></i
+							></a>
+							<a
+								href="#"
+								class="footer-social-icon d-inline-flex align-items-center justify-content-center"
+								><i class="fab fa-twitter"></i
+							></a>
+							<a
+								href="#"
+								class="footer-social-icon d-inline-flex align-items-center justify-content-center"
+								><i class="fab fa-instagram"></i
+							></a>
+							<a
+								href="#"
+								class="footer-social-icon d-inline-flex align-items-center justify-content-center"
+								><i class="fab fa-pinterest-p"></i
+							></a>
+							<a
+								href="#"
+								class="footer-social-icon d-inline-flex align-items-center justify-content-center"
+								><i class="fab fa-youtube"></i
+							></a>
+						</div>
+						<div class="footer-discount text-secondary" style="font-size: 1rem">
 							Up to 15% discount on your first subscribe
 						</div>
 					</div>
@@ -678,43 +908,137 @@
 		</footer>
 		<!-- End Footer Section -->
 
-		<!-- Footer Bottom Section -->
-		<div class="footer-bottom-section section-container pt-3 pb-5 mt-4">
-			<div class="container-fluid px-0">
-				<div class="row align-items-center justify-content-between">
-					<div class="col-md-6 col-12 mb-2 mb-md-0">
-						<div class="footer-copyright text-secondary small">
-							© 2022, <a href="#" class="text-success text-decoration-none">Nest</a> -
-							HTML Ecommerce Template<br />
-							All rights reserved
-						</div>
+		<!-- Desktop Footer Bottom Section -->
+		<div
+			class="footer-bottom-section section-container d-none d-md-flex align-items-center justify-content-between border-top pt-3 pb-4 mt-2"
+			style="font-size: 0.98rem"
+		>
+			<div class="text-secondary ms-2">
+				© 2022, <a href="#" class="text-success text-decoration-none">Nest</a> -
+				HTML Ecommerce Template<br />
+				All rights reserved
+			</div>
+			<div class="d-flex align-items-center gap-4 me-2">
+				<div class="d-flex align-items-center gap-2">
+					<i class="fa-solid fa-phone-volume fa-lg text-secondary"></i>
+					<div class="d-flex flex-column">
+						<span class="fw-bold text-success">01234567</span>
+						<span class="text-secondary small">Working 8:00 - 22:00</span>
 					</div>
-					<div
-						class="col-md-6 col-12 d-flex justify-content-md-end justify-content-start gap-4"
-					>
-						<div class="footer-contact-info d-flex align-items-center gap-2">
-							<i class="fa-solid fa-phone-volume fa-lg text-secondary"></i>
-							<div>
-								<span class="fw-bold text-success d-block" style="font-size: 1.2rem"
-									>01234567</span
-								>
-								<span class="text-secondary small">Working 8:00 - 22:00</span>
-							</div>
-						</div>
-						<div class="footer-contact-info d-flex align-items-center gap-2">
-							<i class="fa-solid fa-phone-volume fa-lg text-secondary"></i>
-							<div>
-								<span class="fw-bold text-success d-block" style="font-size: 1.2rem"
-									>01234567</span
-								>
-								<span class="text-secondary small">24/7 Support Center</span>
-							</div>
-						</div>
+				</div>
+				<div class="d-flex align-items-center gap-2">
+					<i class="fa-solid fa-phone-volume fa-lg text-secondary"></i>
+					<div class="d-flex flex-column">
+						<span class="fw-bold text-success">01234567</span>
+						<span class="text-secondary small">24/7 Support Center</span>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- End Footer Bottom Section -->
+
+		<!-- Mobile Footer Section -->
+		<footer class="footer-section-mobile d-block d-md-none py-4 px-3 bg-white">
+			<div class="mb-3">
+				<img src="assets/imgs/logo.png" alt="Nest logo" style="height: 36px" />
+				<span class="ms-2 fw-bold" style="font-size: 1.4rem; color: #198754"
+					>Nest</span
+				>
+				<div class="mt-2 text-secondary small">
+					Awesome grocery store website template
+				</div>
+			</div>
+			<ul class="list-unstyled mb-3 ps-2">
+				<li class="mb-2">
+					<i class="fa-solid fa-location-dot text-success me-2"></i> 5171 W Campbell
+					Ave undefined Kent, Utah 53127 United States
+				</li>
+				<li class="mb-2">
+					<i class="fa-solid fa-headphones text-success me-2"></i> (+91) -
+					540-025-124553
+				</li>
+				<li class="mb-2">
+					<i class="fa-solid fa-paper-plane text-success me-2"></i> sale@Nest.com
+				</li>
+				<li>
+					<i class="fa-regular fa-clock text-success me-2"></i> 10:00 - 18:00, Mon -
+					Sat
+				</li>
+			</ul>
+			<div class="row text-start mb-3">
+				<div class="col-6">
+					<div class="fw-bold mb-2">Company</div>
+					<ul class="list-unstyled small">
+						<li>About Us</li>
+						<li>Delivery Information</li>
+						<li>Privacy Policy</li>
+						<li>Terms & Conditions</li>
+						<li>Contact Us</li>
+						<li>Support Center</li>
+						<li>Careers</li>
+					</ul>
+				</div>
+				<div class="col-6">
+					<div class="fw-bold mb-2">Account</div>
+					<ul class="list-unstyled small">
+						<li>Sign In</li>
+						<li>View Cart</li>
+						<li>My Wishlist</li>
+						<li>Track My Order</li>
+						<li>Help Ticket</li>
+						<li>Shipping Details</li>
+						<li>Compare products</li>
+					</ul>
+				</div>
+				<div class="col-6">
+					<div class="fw-bold mb-2">Corporate</div>
+					<ul class="list-unstyled small">
+						<li>Become a Vendor</li>
+						<li>Affiliate Program</li>
+						<li>Farm Business</li>
+						<li>Farm Careers</li>
+						<li>Our Suppliers</li>
+						<li>Accessibility</li>
+						<li>Promotions</li>
+					</ul>
+				</div>
+				<div class="col-6">
+					<div class="fw-bold mb-2">Popular</div>
+					<ul class="list-unstyled small">
+						<li>Milk & Flavoured Milk</li>
+						<li>Butter and Margarine</li>
+						<li>Eggs Substitutes</li>
+						<li>Marmalades</li>
+						<li>Sour Cream and Dips</li>
+						<li>Tea & Kombucha</li>
+						<li>Cheese</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mb-2 fw-bold">Install App</div>
+			<div class="mb-2 small">From App Store or Google Play</div>
+			<div class="d-flex gap-2 mb-3">
+				<a href="#"
+					><img
+						src="assets/imgs/Link → app-store.jpg.png"
+						alt="App Store"
+						style="height: 32px"
+				/></a>
+				<a href="#"
+					><img
+						src="assets/imgs/Link → google-play.jpg.png"
+						alt="Google Play"
+						style="height: 32px"
+				/></a>
+			</div>
+			<div class="mb-2 text-secondary small">Secured Payment Gateways</div>
+			<div class="d-flex gap-2 mb-2">
+				<img
+					src="assets/imgs/payment-method.png.png"
+					alt="Visa"
+					style="height: 22px"
+				/>
+			</div>
+		</footer>
 
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
